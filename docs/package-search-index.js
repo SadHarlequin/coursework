@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.mirea.confectionery"},{"l":"com.mirea.confectionery.configurations"},{"l":"com.mirea.confectionery.controllers"},{"l":"com.mirea.confectionery.models"},{"l":"com.mirea.confectionery.repositories"},{"l":"com.mirea.confectionery.services"}];updateSearchResults();

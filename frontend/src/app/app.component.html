@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <title>{{title}}</title>
+</head>
+<body>
+<!-- header area start -->
+<header class="header-area ptb-15">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="header-left-content">
+          <ul>
+            <li><a href="javascript:void(0)"><i class="fa fa-phone"></i>0123 4567 8913</a></li>
+            <li><a href="javascript:void(0)"><i class="fa fa-envelope"></i>example@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="header-right-content">
+          <ul>
+            <li><a href="javascript:void(0)" routerLink="/cart" onclick="return false" class="krishok-cart"><i class="fa fa-shopping-cart"></i>
+              <span *ngIf="this.currentUser == null">0</span>
+              <span *ngIf="this.currentUser != null">{{this.currentUser?.cart.length}}</span>
+            </a></li>
+            <li><a href="javascript:void(0)" class="popup-show">
+              <span *ngIf="currentUser == null" (click)="p1.open()">Login</span>
+              <div class="login-popup login-form contact-form" [ngbPopover]="login" [autoClose]="false" #p1='ngbPopover'>
+              <ng-template #login>
+                  <h4 style="font-family: 'Poppins', sans-serif;">Login</h4>
+                  <form (ngSubmit)="onSubmitLogin()" #userFormLogin='ngForm'>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="contact-container">
+                          <input type="email" placeholder="Email Address" [(ngModel)]="formUser.username" required
+                                 name="username">
+                          <i class="fa fa-envelope"></i>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 mb-15">
+                        <div class="contact-container">
+                          <input type="password" placeholder="Password" [(ngModel)]="formUser.password" required
+                                 name="password">
+                          <i class="fa fa-eye"></i>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 mb-30">
+                        <button class="krishok-btn login-button" type="submit" [disabled]="!userFormLogin.valid"
+                                (click)="p1.close()">
+                          LOGIN
+                        </button>
+                      </div>
+                      <div class="col-sm-12 mt-30">
+                        <p>Don’t Have an Account ? <a href="javascript:void(0)" class="registration-form-show"
+                                                      (click)="p1.close(); p2.open()">Create Now</a></p>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="popup-close" (click)="p1.close()"><i class="fa fa-close"></i></div>
+              </ng-template>
+              </div>
+              <div class="login-popup registration-form contact-form" [ngbPopover]="registration" [autoClose]="false"
+                   #p2='ngbPopover'>
+              <ng-template #registration>
+                  <h4 style="font-family: 'Poppins', sans-serif;">Create Account</h4>
+                  <form (ngSubmit)="onSubmitRegistration()" #userForm='ngForm'>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="contact-container">
+                          <input type="text" class="form-control" placeholder="Username" [(ngModel)]="formUser.username"
+                                 required pattern="^[A-Za-z0-9_]+$"
+                                  name="username">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="contact-container">
+                          <input type="email" placeholder="Email Address" [(ngModel)]="formUser.email" required
+                                 name="email" pattern="^\S+@\S+\.\S+$">
+                          <i class="fa fa-envelope"></i>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="contact-container">
+                          <input type="password" placeholder="Password" [(ngModel)]="formUser.password" required
+                                name="password">
+                          <i class="fa fa-eye"></i>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 mb-15 contact-container">
+                        <input type="password" placeholder="Retype Password" [(ngModel)]="formUser.retypedPassword"
+                               required  name="retypedPassword">
+                      </div>
+                      <div class="col-sm-12 mb-20">
+                        <button type='submit' class="krishok-btn"
+                                [disabled]="!userForm.form.valid">
+                          Create Account
+                        </button>
+                      </div>
+                      <div class="col-sm-12">
+                        <p>Already Have an Account ? <a href="javascript:void(0)" class="login-form-show"
+                                                        (click)="p2.close(); p1.open()">Login Now</a></p>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="popup-close" (click)="p2.close()"><i class="fa fa-close"></i></div>
+              </ng-template>
+              </div>
+              <span *ngIf="currentUser != null" [ngbPopover]="logged" [autoClose]="false"
+                    #loggedForm='ngbPopover'>{{this.currentUser?.username}}
+                <div class="login-popup login-form contact-form">
+                <ng-template #logged>
+                  <h4 style="font-family: 'Poppins', sans-serif;">{{this.currentUser?.username}}</h4>
+                  <div class="row">
+                    <div class="col-sm-12 mb-30">
+                      <button class="krishok-btn login-button" type="submit" (click)="loggedForm.close(); logout();">
+                        LOGOUT
+                      </button>
+                    </div>
+                  </div>
+                  <div class="popup-close" (click)="loggedForm.close()"><i class="fa fa-close"></i></div>
+                </ng-template>
+              </div>
+              </span>
+            </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header><!-- header area end -->
+<!-- menu area start -->
+<div class="menubar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-sm-6">
+        <div class="logo">
+          <a href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+        </div>
+      </div>
+      <div class="col-md-10 col-sm-6">
+        <div class="responsive-menu"></div>
+        <div class="mainmenu">
+          <ul id="primary-menu">
+            <li [ngClass]="{'active': compNumber === 0}"><a routerLink="">Home</a></li>
+            <li [ngClass]="{'active': compNumber === 1}"><a routerLink="/about-us">About Us</a></li>
+            <li [ngClass]="{'active': compNumber === 2}"><a routerLink="/products">Products</a></li>
+            <li [ngClass]="{'active': compNumber === 3}"><a routerLink="/cart">Cart</a></li>
+            <li [ngClass]="{'active': compNumber === 4}"><a routerLink="/contact-us">Contact</a></li>
+            <li>
+              <button type="submit" class="toggle-pade">
+                <i class="fa fa-search"></i>
+              </button>
+              <form class="navbar-form form-box" role="search">
+                <input type="text" placeholder="Search">
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- menu area end -->
+<router-outlet (activate)="change_outlet($event)"></router-outlet>
+<!-- footer area start -->
+<footer class="site-footer pt-75">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="widget">
+          <h5 class="widget-title"><a href="javascript:void(0)">About Us</a></h5>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of tand scrambled
+            it to make a type specimen wonder full book. </p>
+          <div class="widget-icon">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="widget">
+          <h5 class="widget-title"><a href="javascript:void(0)">Keep in touch</a></h5>
+          <ul>
+            <li>Address : 97 New Design Street, Dhaka BD</li>
+            <li>Phone : 1234 5678 9123</li>
+            <li>Email : Stevan@Example.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom-bg ptb-20">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer-bottom">
+            <p>Copyright © 2021 - All Right Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer><!-- footer area end -->
+</body>
+</html>

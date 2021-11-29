@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Krishok | Cart</title>
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
+  <!-- slicknav CSS -->
+  <link rel="stylesheet" href="assets/css/slicknav.min.css">
+  <!-- Owl carousel CSS -->
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="assets/css/lightbox.min.css"/>
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <!-- Main style CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+</head>
+<body>
+<!-- hero area start -->
+<section class="theme2 theme6 hero-area ptb-110">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="hero-area-content">
+          <h1 class="text-uppercase">Payment</h1>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industr standard dummy text ever since when an unknown printer took a galley</p>
+          <a href="products.html" class="krishok-btn">Continue shopping</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- hero area end -->
+<!-- checkout area start -->
+<section class="bg-color checkout-area ptb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="contact-form contact-form-2">
+          <h4>Select your payment method</h4>
+          <form action="#">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="contact-container">
+                  <label>Card number</label>
+                  <input type="text" placeholder="1234 4567 8910 1234">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <label>Expire date</label>
+              </div>
+              <div class="col-lg-6">
+                <div class="select-container">
+                  <select>
+                    <option value="month">Month</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="select-container">
+                  <select>
+                    <option value="year">Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="contact-container">
+                  <label>Security code</label>
+                  <input type="text" placeholder="123456">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <label>Zip code</label>
+                <input type="text" placeholder="12345">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <section class="bg-color checkout-area ptb-80">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="contact-form">
+                <h3>Shipping Address</h3>
+                <form (ngSubmit)="onSubmit()" #formSend='ngForm'>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <input type="text" placeholder="First Name"  name="firstName" required>
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="text" placeholder="Last Name"  name="lastName" required>
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="email" placeholder="Email Address" name="email" required>
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="text" placeholder="Phone Number"  name="phoneNumber" required>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="select-container">
+                        <select>
+                          <option value="country">Country</option>
+                          <option value="russia">Russia</option>
+                          <option value="germany">Germany</option>
+                          <option value="spain">Spain</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="text" placeholder="City"  name="city" required>
+                    </div>
+                    <div class="col-lg-6">
+                      <input type="text" placeholder="Zip or Postal Code">
+                    </div>
+                    <div class="col-lg-12">
+                      <input type="text" placeholder="Address Line 1"  name="address" required>
+                    </div>
+                    <div class="col-lg-12">
+                      <textarea placeholder="Additional Instruction" name="instructions"></textarea>
+                    </div>
+                    <div class="col-lg-3 offset-lg-9 col-md-6 offset-md-6 mt-30">
+                      <button class="krishok-btn" [disabled]="!formSend.valid">Payment Now <i class="fa fa-angle-right"></i></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><!-- checkout area end -->
+    </div>
+  </div>
+</section><!-- checkout area end -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.slicknav.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/isotope-3.0.4.min.js"></script>
+<script src="assets/js/jquery.bxslider.min.js"></script>
+<script src="assets/js/lightbox.min.js"></script>
+<script src="assets/js/wow-1.3.0.min.js"></script>
+<script src="assets/js/jquery.imagezoom.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+:host >>> .popover {
+  width: 380px;
+  max-width: 380px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+:host >>> .contact-container input{
+  width: 100%;
+  padding-right: 35px;
+  margin-bottom: 0;
+  border-radius: 5px;
+  margin-top: 10px;
+
+}
+:host >>> .popover h4{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+:host >>> .contact-form input, .contact-form textarea {
+  margin-bottom: 17px;
+}
+
+:host >>> .contact-form input, .contact-form textarea, .contact-form button {
+  width: 100%;
+}
+
+:host >>> input[type="text"], input[type="email"], input[type="url"], input[type="tel"], input[type="search"], input[type="password"], textarea {
+  background: transparent;
+  max-width: 100%;
+  padding: 12px 15px;
+
+  /*border: 1px solid #eee;*/
+}
+
+:host >>> header.header-area .header-right-content li i {
+  margin-left: 6px;
+  margin-top: 10px;
+
+}
+
+:host >>> .login-popup .contact-container i {
+  font-size: 12px;
+  margin-top: 10px;
+
+}
+
+:host >>> .contact-container i {
+  position: absolute;
+  bottom: 25%;
+  right: 15px;
+  font-size: 19px;
+  color: #303030;
+}
+
+:host >>> .login-popup.contact-form p {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+:host >>> .registration-form-show{
+  font-weight: 400;
+  color: #77bb17;
+}
+
+:host >>> .login-form-show{
+  font-weight: 400;
+  color: #77bb17;
+}
+
+:host >>> .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+:host >>> .login-button{
+  margin-top: 20px;
+}
+
