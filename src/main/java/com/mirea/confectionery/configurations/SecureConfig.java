@@ -19,7 +19,7 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
     /** Поле сервиса для работы с пользователями */
     @Autowired
     private UserService userService;
-s
+
     /**
      * Метод конфигурации защиты с http
      * @param http модифицируемый экземпляр HttpSecurity
